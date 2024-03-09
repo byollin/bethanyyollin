@@ -1,0 +1,32 @@
+---
+import Card from '@components/ui/Card.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects', ({ data }) => {
+	return !data.inProgress;
+});
+---
+
+<section
+	data-testid="projects"
+	id="projects"
+	class="mb-10 flex flex-col items-center justify-center md:mb-0 md:h-screen"
+>
+	<h2 class="font-monospace text-2xl text-green lg:text-4xl">Projects</h2>
+	<div class="mb-10 mt-10 flex w-full flex-col flex-wrap items-center md:flex-row">
+		{
+			projects.map((project) => (
+				<Card
+					title={project.data.title}
+					description={project.data.description}
+					img={project.data.img}
+					alt={project.data.img_alt}
+					width={project.data.width}
+					height={project.data.height}
+					github={project.data.github}
+					app={project.data.app}
+				/>
+			))
+		}
+	</div>
+</section>

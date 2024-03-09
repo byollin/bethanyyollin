@@ -1,0 +1,18 @@
+---
+import Button from '@components/ui/Button.astro';
+
+export interface Props {
+	url?: string;
+    label?: string;
+}
+
+const { url, label } = Astro.props;
+---
+
+{
+	url && (
+        <Button style={'primary'} size={'sm'} class={'flex'} name="github">
+            <a href={url} target='_blank' style='width:5em'>{label}</a>
+        </Button>
+	)
+}

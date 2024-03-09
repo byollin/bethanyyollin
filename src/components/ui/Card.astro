@@ -1,0 +1,48 @@
+---
+import projectImage from '@assets/images/project.png';
+import { Image } from '@astrojs/image/components';
+import ProjectButtons from '@components/ui/ProjectButtons.astro';
+interface Props {
+	title?: string;
+	description?: string,
+	url?: string;
+	img?: string;
+	alt?: string;
+	width?: integer;
+	height?: integer;
+	github?: integer;
+	app?: integer;
+	children?: HTMLElement | HTMLElement[];
+}
+
+const { url = '#', img = projectImage, width = 300, height = 300, alt = 'Project image', description = 'Project Description', title = 'Project title', github = '', app = '' } = Astro.props;
+---
+
+<section class="w-full p-4 md:w-1/2 lg:w-1/3">
+	<article
+		data-testId="card"
+		class="rounded-xl bg-white p-3 shadow-lg duration-100 hover:scale-105 hover:transform hover:shadow-xl"
+		style="height:60vh; overflow:scroll"
+	>
+			<div class="relative flex items-end overflow-hidden">
+				<a href={img} aria-label="link to project" target="_blank">
+					<Image
+						src={img}
+						alt={alt}
+						format="png"
+						width={width}
+						height={height}
+						loading="eager"
+					/>
+				</a>
+			</div>
+			<div class="mt-1 p-2">
+				<h3 class="text-xl text-green lg:text-2xl">{title}</h3>
+				<p class="text-black text-s">{description}</p>
+				<div class="mb-0 mt-2 flex flex-row align-bottom justify-center">
+				<ProjectButtons url={github} label='Github' />
+				<ProjectButtons url={app} label='App' />
+				</div>
+			</div>
+	</article>
+</section>

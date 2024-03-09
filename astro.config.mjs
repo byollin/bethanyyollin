@@ -6,6 +6,6 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	integrations: [tailwind(), mdx(), image()],
-	site: 'https://bethanyyollin.github.io',
+	site: 'https://byollin.github.io',
 	base: '/bethanyyollin'
 });

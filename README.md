@@ -1,4 +1,8 @@
-TODO
+## Welcome
+
+Hello there! Welcome to my portfolio built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/). 
+
+But I can't take all the credit. This code was mostly lifted from [here](https://github.com/veranikabarel/astro-portfolio).
 
 ## Commands
 

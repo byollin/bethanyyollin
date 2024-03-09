@@ -7,4 +7,5 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	integrations: [tailwind(), mdx(), image()],
 	site: 'https://bethanyyollin.github.io',
+	base: '/bethanyyollin'
 });
